@@ -24,8 +24,6 @@ f = open('/var/log/bootupdate.log', 'a')
 f.write("Softwareupdate -ia command ran %s" % now)
 f.close()
 
-newuserfile = open('/tmp/newuser.txt', 'r')
-current = newuserfile.read()
 f = open('/var/log/bootupdate.log', 'a')
 
 
@@ -35,5 +33,5 @@ f.write("THIS IS THE CURRENT_USER!")
 # logfile = open('/var/log/domainuser.log', 'w')
 # logfile.write(str(current_user))
 # logfile.close()
-newuserfile.close()
-f.close()
+# newuserfile.close()
+# f.close()
