@@ -15,7 +15,7 @@ f.close()
 def find_owner(filename):
     return getpwuid(stat(filename).st_uid).pw_name
 
-# new_user = file_owner('/Users/Shared/newuser.txt')
+new_user = find_owner('/Users/Shared/newuser.txt')
 
 # check for software updates
 subprocess.call(['softwareupdate', '-ia'])
