@@ -20,7 +20,7 @@ def find_owner(filename):
     return getpwuid(stat(filename).st_uid).pw_name
 
 new_user = find_owner('/Users/Shared/newuser.txt')
-subprocess.call(['chown', '-R', new_user, '/opt/boxen'])
+
 
 # change default user in boxen default.json file
 
@@ -41,6 +41,9 @@ newfilename = "defaults.json.original"
 
 os.rename(defaults_path + filename, defaults_path + newfilename)
 shutil.move(shared_path + filename, defaults_path + filename)
+
+# change owner of files
+subprocess.call(['chown', '-R', new_user, '/opt/boxen'])
 
 # swap original sudoers file for new one
 ############################################
