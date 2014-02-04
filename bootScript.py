@@ -22,16 +22,16 @@ now = time.strftime("%c")
 
 f = open('/var/log/bootupdate.log', 'a')
 f.write("Softwareupdate -ia command ran %s" % now)
-# f.close()
+f.close()
 
 # newuserfile = open('/tmp/newuser', 'r')
 # current_user = newuserfile.read()
-
+f = open('/var/log/bootupdate.log', 'a')
 
 
 # f.write(str(current_user))
 f.write("THIS IS THE CURRENT_USER!")
-uf = open('/tmp/newuser', 'r')
+
 # logfile = open('/var/log/domainuser.log', 'w')
 # logfile.write(str(current_user))
 # logfile.close()
