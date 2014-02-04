@@ -16,10 +16,13 @@ time.sleep(6)
 # 	temp_userfile = open('/tmp/domainuser', 'r')
 # 	newuser = temp_userfile.read()
 # 	temp_userfile.close()
-	f = open('/var/log/newuser.log', 'w')
-	f.write(str(current_user))
-	f.close()
+# 	f = open('/var/log/newuser.log', 'w')
+# 	f.write(str(newuser))
+# 	f.close()
 
+f = open('/var/log/newuser.log', 'w')
+f.write(str(current_user))
+f.close()
 
 
 # Call user's restart script
