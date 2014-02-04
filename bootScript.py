@@ -27,7 +27,8 @@ f.write("Softwareupdate -ia command ran %s" % now)
 newuserfile = open('/tmp/newuser', 'r')
 current_user = newuserfile.read()
 
-f.write(str(current_user))
+# f.write(str(current_user))
+f.write("THIS IS THE CURRENT_USER!")
 
 # logfile = open('/var/log/domainuser.log', 'w')
 # logfile.write(str(current_user))
