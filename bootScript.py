@@ -21,6 +21,15 @@ def find_owner(filename):
 new_user = find_owner('/Users/Shared/newuser.txt')
 subprocess.call(['chown', '-R', new_user, '/opt/boxen'])
 
+# change default user in boxen default.json file
+oldstr = 'localadmin'
+newstr =  str(new_user)
+
+with open("/opt/boxen/config/boxen/defaults.json") as f:
+    file_lines = f.readlines()
+    new_file = [line.replace(oldstr,newstr) for line in file_lines]
+
+open("/Users/Shared/defaults.json.new","w").write(''.join(new_file))
 
 # Update apple software
 subprocess.call(['softwareupdate', '-ia'])
