@@ -12,6 +12,7 @@ f.write('scripts called\n')
 f.close()
 # Set path variables
 
+newfile = open('/tmp/newuser.txt', 'r')
 
 # check for software updates
 subprocess.call(['softwareupdate', '-ia'])
