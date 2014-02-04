@@ -22,6 +22,7 @@ new_user = find_owner('/Users/Shared/newuser.txt')
 subprocess.call(['chown', '-R', new_user, '/opt/boxen'])
 
 # change default user in boxen default.json file
+
 oldstr = 'localadmin'
 newstr =  str(new_user)
 
@@ -29,7 +30,16 @@ with open("/opt/boxen/config/boxen/defaults.json") as f:
     file_lines = f.readlines()
     new_file = [line.replace(oldstr,newstr) for line in file_lines]
 
-open("/Users/Shared/defaults.json.new","w").write(''.join(new_file))
+open("/Users/Shared/defaults.json","w").write(''.join(new_file))
+
+# swap original boxen file for new one
+defaults_path = "/opt/boxen/config/boxen/"
+shared_path = "/Users/Shared/"
+filename = "defaults.json"
+newfilename = "defaults.json.original"
+
+os.rename(defaults_path + file_name, defaults_path + newfilename)
+shutil.move(shared_path + filename, defaults_path + file_name)
 
 # Update apple software
 subprocess.call(['softwareupdate', '-ia'])
