@@ -12,10 +12,13 @@ f = open('/var/log/bootupdate.log', 'w')
 f.write('scripts called\n')
 f.close()
 
+# Get the owner of the file the new user created on firstboot.
 def find_owner(filename):
     return getpwuid(stat(filename).st_uid).pw_name
 
 new_user = find_owner('/Users/Shared/newuser.txt')
+
+
 
 # check for software updates
 subprocess.call(['softwareupdate', '-ia'])
@@ -32,5 +35,5 @@ f = open('/var/log/bootupdate.log', 'a')
 
 
 # f.write(str(current_user))
-f.write("THIS IS THE CURRENT_USER!")
+f.write(new_user)
 
