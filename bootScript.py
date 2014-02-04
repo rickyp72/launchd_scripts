@@ -57,7 +57,7 @@ with open(defaults_path + filename) as f:
 open(shared_path + filename, "w").write(''.join(new_file))
 
 
-os.rename(defaults_path + file_name, defaults_path + newfilename)
+os.rename(defaults_path + filename, defaults_path + newfilename)
 shutil.move(shared_path + filename, defaults_path + file_name)
 ################################################
 # Update apple software
