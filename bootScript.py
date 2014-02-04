@@ -18,6 +18,8 @@ def find_owner(filename):
 
 new_user = find_owner('/Users/Shared/newuser.txt')
 
+# Open boxen default.json file and change user
+# Change owner of /opt/boxen folder
 
 
 # check for software updates
