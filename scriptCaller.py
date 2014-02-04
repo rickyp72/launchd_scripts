@@ -21,7 +21,7 @@ time.sleep(6)
 # 	f.close()
 
 # Write new users name in tmp file to be read later by bootScript.py
-f = open('/tmp/newuser', 'w')
+f = open('/tmp/newuser.txt', 'w')
 f.write(str(current_user))
 f.close()
 
