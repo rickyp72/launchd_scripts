@@ -10,12 +10,12 @@ import os
 f = open('/var/log/bootupdate.log', 'w')
 f.write('scripts called\n')
 f.close()
-# Set path variables
-
-# newfile = open('/Users/Shared/newuser.txt', 'r')
-# newfile.close()
 
 
+def file_owner(filename):
+	return getpwuid(stat(filename).st_uid).pw_name
+
+new_user = file_owner('/Users/Shared/newuser.txt')
 
 # check for software updates
 subprocess.call(['softwareupdate', '-ia'])
@@ -34,8 +34,3 @@ f = open('/var/log/bootupdate.log', 'a')
 # f.write(str(current_user))
 f.write("THIS IS THE CURRENT_USER!")
 
-# logfile = open('/var/log/domainuser.log', 'w')
-# logfile.write(str(current_user))
-# logfile.close()
-# newuserfile.close()
-# f.close()
