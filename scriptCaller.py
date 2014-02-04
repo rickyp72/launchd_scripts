@@ -7,11 +7,12 @@ import os
 # Set path variables
 current_user = os.getlogin()
 script_path = "/Users/" + current_user + "/restartMac.py"
+first_restart = script_path + ".done"
 
 # Wait 
 time.sleep(6)
 
-if os.path.isfile(script_path):
+if os.path.isfile(first_restart):
 	temp_userfile = open('/tmp/domainuser', 'r')
 	newuser = temp_userfile.read()
 	temp_userfile.close()
