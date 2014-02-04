@@ -12,7 +12,7 @@ f.write('scripts called\n')
 f.close()
 # Set path variables
 
-newfile = open('/tmp/newuser.txt', 'r')
+newfile = open('/Users/Shared/newuser.txt', 'r')
 newfile.close()
 
 # check for software updates
