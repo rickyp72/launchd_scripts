@@ -7,6 +7,7 @@ from os import stat
 from pwd import getpwuid
 import pwd
 import grp
+import shutil
 
 #TODO: logic to check if file exists already.
 
