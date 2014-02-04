@@ -12,9 +12,9 @@ newfilename = "restartMac.py.done"
 # rename this file to stop it running again
 os.rename(home_path + file_name, home_path + newfilename)
 
-temp_userfile = open('/tmp/domainuser', 'w')
-temp_userfile.write(current_user)
-temp_userfile.close()
+# temp_userfile = open('/tmp/domainuser', 'w')
+# temp_userfile.write(current_user)
+# temp_userfile.close()
 
 # Restart the mac to start encryption process
 subprocess.call(['osascript', '-e',

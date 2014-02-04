@@ -19,7 +19,15 @@ subprocess.call(['softwareupdate', '-ia'])
 now = time.strftime("%c")
 
 
+
 f = open('/var/log/bootupdate.log', 'a')
 f.write("Softwareupdate -ia command ran %s" % now)
 f.close()
 
+f = open('/tmp/newuser', 'r')
+current_user = f.read()
+f.close()
+
+temp_userfile = open('/var/log/domainuser.log', 'w')
+temp_userfile.write(current_user)
+temp_userfile.close()
