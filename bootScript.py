@@ -3,7 +3,8 @@
 import subprocess
 import time
 import os
-
+from os import stat
+from pwd import getpwuid
 
 #TODO: logic to check if file exists already.
 
@@ -11,11 +12,10 @@ f = open('/var/log/bootupdate.log', 'w')
 f.write('scripts called\n')
 f.close()
 
+def find_owner(filename):
+    return getpwuid(stat(filename).st_uid).pw_name
 
-def file_owner(filename):
-	return getpwuid(stat(filename).st_uid).pw_name
-
-new_user = file_owner('/Users/Shared/newuser.txt')
+# new_user = file_owner('/Users/Shared/newuser.txt')
 
 # check for software updates
 subprocess.call(['softwareupdate', '-ia'])
