@@ -27,6 +27,8 @@ f.write("Softwareupdate -ia command ran %s" % now)
 # newuserfile = open('/tmp/newuser', 'r')
 # current_user = newuserfile.read()
 
+uf = open('/tmp/newuser', 'r')
+
 # f.write(str(current_user))
 f.write("THIS IS THE CURRENT_USER!")
 
