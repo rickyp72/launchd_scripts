@@ -13,7 +13,7 @@ f.close()
 # Set path variables
 
 
-# Call user's restart script
+# check for software updates
 subprocess.call(['softwareupdate', '-ia'])
 
 now = time.strftime("%c")
@@ -24,8 +24,8 @@ f = open('/var/log/bootupdate.log', 'a')
 f.write("Softwareupdate -ia command ran %s" % now)
 # f.close()
 
-newuserfile = open('/tmp/newuser', 'r')
-current_user = newuserfile.read()
+# newuserfile = open('/tmp/newuser', 'r')
+# current_user = newuserfile.read()
 
 # f.write(str(current_user))
 f.write("THIS IS THE CURRENT_USER!")
