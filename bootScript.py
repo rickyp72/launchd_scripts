@@ -12,8 +12,10 @@ f.write('scripts called\n')
 f.close()
 # Set path variables
 
-newfile = open('/Users/Shared/newuser.txt', 'r')
-newfile.close()
+# newfile = open('/Users/Shared/newuser.txt', 'r')
+# newfile.close()
+
+
 
 # check for software updates
 subprocess.call(['softwareupdate', '-ia'])
