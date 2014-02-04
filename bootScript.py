@@ -41,6 +41,25 @@ newfilename = "defaults.json.original"
 os.rename(defaults_path + file_name, defaults_path + newfilename)
 shutil.move(shared_path + filename, defaults_path + file_name)
 
+# swap original sudoers file for new one
+############################################
+defaults_path = "/etc/"
+shared_path = "/Users/Shared/"
+filename = "sudoers"
+newfilename = "sudoers.original"
+oldstr = 'localadmin'
+newstr =  str(new_user)
+
+with open(defaults_path + filename) as f:
+    file_lines = f.readlines()
+    new_file = [line.replace(oldstr,newstr) for line in file_lines]
+
+open(shared_path + filename, "w").write(''.join(new_file))
+
+
+os.rename(defaults_path + file_name, defaults_path + newfilename)
+shutil.move(shared_path + filename, defaults_path + file_name)
+################################################
 # Update apple software
 subprocess.call(['softwareupdate', '-ia'])
 now = time.strftime("%c")
