@@ -24,7 +24,13 @@ new_gid = grp.getgrnam("wheel").gr_gid
 
 # Open boxen default.json file and change user
 # Change owner of /opt/boxen folder
-os.chown('/opt/boxen', new_uid, new_gid)
+for root, dirs, files in os.walk('/opt/boxen'):
+	for momo in dirs:
+		os.chown(os.path.join(root, momo), new_uid, new_gid)
+	for momo in files:
+		os.chown(os.path.join(root, momo), new_uid, new_gid)
+
+# os.chown('/opt/boxen', new_uid, new_gid)
 
 # check for software updates
 subprocess.call(['softwareupdate', '-ia'])
