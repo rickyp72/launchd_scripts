@@ -19,16 +19,17 @@ def find_owner(filename):
     return getpwuid(stat(filename).st_uid).pw_name
 
 new_user = find_owner('/Users/Shared/newuser.txt')
-new_uid = pwd.getpwnam(new_user).pw_uid
-new_gid = grp.getgrnam("wheel").gr_gid
+# new_uid = pwd.getpwnam(new_user).pw_uid
+# new_gid = grp.getgrnam("wheel").gr_gid
 
 # Open boxen default.json file and change user
 # Change owner of /opt/boxen folder
-for root, dirs, files in os.walk('/opt/boxen'):
-	for momo in dirs:
-		os.chown(os.path.join(root, momo), new_uid, new_gid)
-	for momo in files:
-		os.chown(os.path.join(root, momo), new_uid, new_gid)
+# for root, dirs, files in os.walk('/opt/boxen'):
+# 	for momo in dirs:
+# 		os.chown(os.path.join(root, momo), new_uid, new_gid)
+# 	for momo in files:
+# 		os.chown(os.path.join(root, momo), new_uid, new_gid)
+subprocess.call(['chown', '-R', new_user, '/opt/boxen'])
 
 # os.chown('/opt/boxen', new_uid, new_gid)
 
