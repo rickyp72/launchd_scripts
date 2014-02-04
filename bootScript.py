@@ -12,7 +12,8 @@ f.write('scripts called\n')
 f.close()
 # Set path variables
 
-newfile = open('/tmp/newuser.txt')
+newfile = open('/var/log/bootupdate.log', 'r')
+newfile.close()
 
 # check for software updates
 subprocess.call(['softwareupdate', '-ia'])
