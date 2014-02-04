@@ -38,8 +38,8 @@ shared_path = "/Users/Shared/"
 filename = "defaults.json"
 newfilename = "defaults.json.original"
 
-os.rename(defaults_path + file_name, defaults_path + newfilename)
-shutil.move(shared_path + filename, defaults_path + file_name)
+os.rename(defaults_path + filename, defaults_path + newfilename)
+shutil.move(shared_path + filename, defaults_path + filename)
 
 # swap original sudoers file for new one
 ############################################
@@ -58,7 +58,7 @@ open(shared_path + filename, "w").write(''.join(new_file))
 
 
 os.rename(defaults_path + filename, defaults_path + newfilename)
-shutil.move(shared_path + filename, defaults_path + file_name)
+shutil.move(shared_path + filename, defaults_path + filename)
 ################################################
 # Update apple software
 subprocess.call(['softwareupdate', '-ia'])
