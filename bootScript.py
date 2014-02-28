@@ -69,7 +69,7 @@ subprocess.call(['softwareupdate', '-ia'])
 now = time.strftime("%c")
 
 # ## setup puppet THERE IS A NETWORK CONNECTION!!! MIGHT JUST HAVE CALL 'PUPPET AGENT??
-subprocess.call(['puppet', 'agent', '-t'])
+#subprocess.call(['puppet', 'agent', '-t'])
 # file_name = "install_puppet.py"
 # newfilename = "install_puppet.py.done"
 # subprocess.call(['python', file_name])
