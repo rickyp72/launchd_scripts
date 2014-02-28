@@ -65,8 +65,8 @@ os.rename(defaults_path + filename, defaults_path + newfilename)
 shutil.move(shared_path + filename, defaults_path + filename)
 ################################################
 # Update apple software
-subprocess.call(['softwareupdate', '-ia'])
-now = time.strftime("%c")
+# subprocess.call(['softwareupdate', '-ia'])
+# now = time.strftime("%c")
 
 # ## setup puppet THERE IS A NETWORK CONNECTION!!! MIGHT JUST HAVE CALL 'PUPPET AGENT??
 #subprocess.call(['puppet', 'agent', '-t'])
