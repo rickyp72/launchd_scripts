@@ -68,6 +68,12 @@ shutil.move(shared_path + filename, defaults_path + filename)
 subprocess.call(['softwareupdate', '-ia'])
 now = time.strftime("%c")
 
+## setup puppet
+file_name = "install_puppet.py"
+newfilename = "install_puppet.py.done"
+subprocess.call(['python', file_name])
+# rename this file to stop it running again
+os.rename(file_name, newfilename)
 
 # Log some stuff
 f = open('/var/log/bootupdate.log', 'a')
