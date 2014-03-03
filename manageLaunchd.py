@@ -31,6 +31,7 @@ subprocess.call(['launchctl', 'load', '/Library/LaunchDaemons/com.rnbbootrun.pli
 # sign scripts
 #subprocess.call(['codesign', "-s - --resource-rules='/Users/user/Desktop/launchd_files/ResourceRules-ignoring-Scripts.plist' '/Library/Scripts/devloginhook.sh'"])
 subprocess.call(['rm', '-rf', '/var/db/ConfigurationProfiles/Setup/.profileSetupDone'])
+subprocess.call(['rm', '-rf', '/var/db/ConfigurationProfiles/Setup/.inProgress'])
 subprocess.call(['cp', '/opt/MDM_Profiles/*.mobileconfig', '/var/db/ConfigurationProfiles/Setup/'])
 # print "Copy and run the below command in the terminal: "
 # print 'sudo codesign -s - --resource-rules=/Users/user/Desktop/launchd_files/ResourceRules-ignoring-Scripts.plist /Library/Scripts/devloginhook.sh'
